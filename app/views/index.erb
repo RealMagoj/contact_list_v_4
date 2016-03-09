@@ -1,1 +1,19 @@
-<h1>Home Page</h1>
+<h1>Contact List</h1>
+
+<ul class="menu">
+  <div class="form-new-contact">
+    <label>Name:</label>
+    <input type="text" id="name" value="<%= @contact && @contact.name %>"><br>
+    <label>Email:</label>
+    <input type="text" id="email" value="<%= @contact && @contact.email %>">
+    <li><button class="new">New</li><br>
+  </div><hr/>
+  <li><button class="list">List</li><br>
+  <li><button class="show">Show</li><input type="text" id="id"><br>
+  <li><button class="search">Search</li><input type="text" id="search"><br>
+  <li><button class="update">Update</li><input type="text" id="search"><br>
+</ul>
+
+<h4>Contacts</h4><hr/>
+<div class="contact-list">
+</div>
