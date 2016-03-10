@@ -15,8 +15,7 @@ post '/contacts/new' do
     email: params[:email]
   )
   if @contact.save
-    puts 'Check'
-    return {'created': true}.to_json
+    return @contact.to_json
   end
 end
 

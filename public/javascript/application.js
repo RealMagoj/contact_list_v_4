@@ -9,7 +9,8 @@ $(document).ready(function() {
       dataType: 'json',
       data: {name: $('#name').val(), email: $('#email').val()},
       success: function(data){
-        alert('Created new contact!')
+        console.log(data);
+        alert('Created new contact ' + data.id + '!');
       }
     });
   });
@@ -20,7 +21,7 @@ $(document).ready(function() {
       url: '/contacts',
       dataType: 'json',
       success: function(data){
-        $('.contact-list').html("");
+        $('.contact-list').empty();
         $.each(data, function(index, contact){
           $('.contact-list').append("<p>" + contact.name + ", " + contact.email + " <button class='delete' id='" + contact.id + "'>Delete</button></p>");
         });
@@ -53,5 +54,7 @@ $(document).ready(function() {
       }
     });
   });
+
+  // $()
 
 });
